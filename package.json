@@ -1,0 +1,25 @@
+{
+  "name": "qrconverter-app",
+  "version": "1.0.0",
+  "description": "\"electron.js\" is a QR code converter software that transforms a web interface into an application.",
+  "homepage": "https://github.com/Lumen142/QRConverter-APP#readme",
+  "bugs": {
+    "url": "https://github.com/Lumen142/QRConverter-APP/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lumen142/QRConverter-APP.git"
+  },
+  "license": "ISC",
+  "author": "Lumen142",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.3"
+  }
+}
