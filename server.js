@@ -9,7 +9,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-const QRCode = require('qrcode')
+const qrService = require("./packages/QRService");
 
 const port = 3000;
 
@@ -20,11 +20,11 @@ app.get("/", (req, res) => {
 })
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log(socket.id + " connected");
 
   socket.on("generateQR", (textValue) => {
-    const qr = QRCode.toDataURL(textValue, function(err, url) {
-        socket.emit("qrGenerated", url);
+    const qr = qrService.generateQR(textValue).then((qrData) => {
+      socket.emit("qrGenerated", qrData);
     })
   })
 });
